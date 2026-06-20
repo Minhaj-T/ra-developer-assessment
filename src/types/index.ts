@@ -53,5 +53,5 @@ export interface ItineraryDay {
 
 // Expanded package with destination details (for queries with references)
 export interface PackageWithDestination extends Omit<Package, "destination"> {
-  destination: Destination;
+  destination: Pick<Destination, "name" | "slug">;
 }
