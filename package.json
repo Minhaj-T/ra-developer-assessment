@@ -6,14 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "studio": "npm run dev --prefix sanity",
-    "studio:build": "npm run build --prefix sanity"
+    "lint": "next lint"
   },
   "dependencies": {
     "@sanity/client": "^6.15.0",
     "@sanity/image-url": "^1.0.2",
     "next": "14.2.0",
+    "next-sanity": "^5.5.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

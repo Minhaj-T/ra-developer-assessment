@@ -33,6 +33,7 @@ storybook-static/
 /playwright-report/
 /playwright/.cache/
 *.tsbuildinfo
+.sanity/
 
 /.npm-only-allow
 .pnpm-store/
