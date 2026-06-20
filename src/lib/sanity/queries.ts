@@ -14,9 +14,9 @@ export const destinationBySlugQuery = `
   }
 `;
 
-export const featuredPackagesQuery = `
-  *[_type == "package" && destination->slug.current == $slug && featured == true]
-  | order(_createdAt asc) {
+export const packagesByDestinationQuery = `
+  *[_type == "package" && destination->slug.current == $slug]
+  | order(featured desc, _createdAt asc) {
     _id,
     _type,
     name,
@@ -30,6 +30,8 @@ export const featuredPackagesQuery = `
     featured
   }
 `;
+
+export const featuredPackagesQuery = packagesByDestinationQuery;
 
 export const packageBySlugQuery = `
   *[_type == "package" && slug.current == $slug][0] {
