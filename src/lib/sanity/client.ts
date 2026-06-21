@@ -20,7 +20,9 @@ export function urlFor(source: SanityImageSource) {
 // Helper function to fetch data with error handling
 export async function fetchSanity<T>(query: string, params = {}): Promise<T> {
   try {
-    const data = await client.fetch<T>(query, params);
+    const data = await client.fetch<T>(query, params, {
+      next: { revalidate: 300 },
+    });
     return data;
   } catch (error) {
     console.error("Sanity fetch error:", error);

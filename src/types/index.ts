@@ -55,3 +55,5 @@ export interface ItineraryDay {
 export interface PackageWithDestination extends Omit<Package, "destination"> {
   destination: Pick<Destination, "name" | "slug">;
 }
+
+export type PackageSummary = Omit<Package, "destination" | "itinerary">;
