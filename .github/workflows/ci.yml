@@ -45,10 +45,6 @@ jobs:
     needs: quality
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
-      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       VERCEL_TARGET: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
@@ -68,10 +64,6 @@ jobs:
       - name: Verify deployment configuration
         run: |
           for variable in \
-            NEXT_PUBLIC_SANITY_DATASET \
-            NEXT_PUBLIC_SANITY_PROJECT_ID \
-            NEXT_PUBLIC_SUPABASE_ANON_KEY \
-            NEXT_PUBLIC_SUPABASE_URL \
             VERCEL_ORG_ID \
             VERCEL_PROJECT_ID \
             VERCEL_TOKEN
