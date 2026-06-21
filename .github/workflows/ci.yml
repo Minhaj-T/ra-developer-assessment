@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+      - ci/vercel-deployment
   workflow_dispatch:
 
 permissions:
