@@ -4,10 +4,10 @@ import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 // Sanity client configuration
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   apiVersion: "2024-01-01",
-  useCdn: true, // Set to false for real-time data in development
+  useCdn: process.env.NODE_ENV === 'production',
 });
 
 // Image URL builder
