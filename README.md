@@ -2,7 +2,7 @@
 
 A CMS-driven China destination experience built for the Royal Arabian Senior Full-Stack Developer Assessment.
 
-The application uses Next.js 14, TypeScript, Tailwind CSS, and Sanity CMS. It also includes the optional Supabase enquiry flow, package detail pages, subtle transitions, component tests, and automated deployment through GitHub Actions.
+The application uses Next.js 14, TypeScript, Tailwind CSS, and Sanity CMS. It also includes the optional Supabase enquiry flow, package detail pages, component tests, and automated deployment through GitHub Actions.
 
 ## Live Links
 
@@ -33,7 +33,7 @@ The Sanity project contains the China destination, its hero image, overview, hig
 - Dynamic SEO metadata from Sanity
 - Optimized responsive images through `next/image`
 - Incremental Static Regeneration with a five-minute revalidation interval
-- Smooth scrolling and subtle transitions with reduced-motion support
+- Smooth anchor scrolling and limited hover transitions with reduced-motion support
 - Custom loading-failure and not-found experiences
 - Vitest and React Testing Library component tests
 - GitHub Actions quality checks and Vercel deployment
@@ -267,11 +267,11 @@ Implemented bonus items:
 
 - Supabase enquiry integration
 - Dynamic package detail pages
-- Subtle transitions
 - Basic component tests
 
 ## Known Trade-offs
 
 - The enquiry form submits directly from the browser using the Supabase anonymous key and an insert-only RLS policy. A production implementation should add rate limiting or CAPTCHA protection.
 - The project contains focused tests for the enquiry flow rather than complete component and end-to-end coverage.
+- Motion is limited to smooth anchor scrolling and small hover transitions; dedicated scroll-reveal animations were not implemented.
 - CMS updates may take up to five minutes to appear because of the configured revalidation interval.
